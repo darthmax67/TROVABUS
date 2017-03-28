@@ -1,0 +1,21 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="android:Theme.Holo.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+    </style>
+
+    <style name="FullScreen" parent="android:Theme.Holo.Light.DarkActionBar">
+        <item name="android:windowFullscreen" >true</item>
+        <item name="android:windowNoTitle">true</item>
+    </style>
+
+    <style name="TitleApp" parent="AppTheme">
+
+        <item name="android:textColorPrimary">@android:color/holo_red_dark</item>
+    </style>
+
+
+
+
+</resources>

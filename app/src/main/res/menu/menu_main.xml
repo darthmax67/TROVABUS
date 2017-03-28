@@ -1,0 +1,9 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+    <item
+        android:id="@+id/MENU_1"
+        android:title="Item1"/>
+    <item
+        android:id="@+id/MENU_2"
+        android:title="Item2"/>
+</menu>
+
