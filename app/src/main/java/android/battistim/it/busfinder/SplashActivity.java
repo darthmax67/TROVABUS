@@ -16,7 +16,7 @@ import java.lang.ref.WeakReference;
 
 public class SplashActivity extends Activity {
 
-    private static final String TAG_LOG = SplashActivity.class.getName();
+    private static final String TAG_LOG = "BUSFINDER";
 
     private static final long MAX_WAIT_INTERVAL = 3000L;
     private static final long MIN_WAIT_INTERVAL = 1000L;
@@ -50,7 +50,7 @@ public class SplashActivity extends Activity {
 
             if (srcActivity ==null)
             {
-                Log.d(TAG_LOG, "reference to SplashActivity is null");
+                Log.d(TAG_LOG, SplashActivity.class.getName() + ": reference to SplashActivity is null");
                 return;
             }
 
@@ -59,7 +59,7 @@ public class SplashActivity extends Activity {
                     long elapsedTime = SystemClock.uptimeMillis() - srcActivity.mStartTime;
                     if(elapsedTime >= MIN_WAIT_INTERVAL && !srcActivity.mIsDone ) {
 
-                        Log.d(TAG_LOG, "handleMessage: messaggio ricevuto");
+                        Log.d(TAG_LOG, SplashActivity.class.getName() + ":handleMessage: messaggio ricevuto");
                         srcActivity.mIsDone = true;
                         srcActivity.goAhead();
                     }
@@ -102,7 +102,7 @@ public class SplashActivity extends Activity {
             this.mStartTime = savedInstanceState.getLong(START_TIME_KEY);
 
         mHandler = new UiHandler(this);
-        Log.d("BUSFINDER", "Splash Avviato");
+        Log.d(TAG_LOG, SplashActivity.class.getName() + ":On create: Splash Avviato");
 
         // agiungiamo un evento di touch solo sull'Immagiene
         ImageView imgBus = (ImageView) findViewById(R.id.splashImage);
@@ -115,7 +115,7 @@ public class SplashActivity extends Activity {
                     goAhead();
                 }
                 else
-                    Log.d(TAG_LOG, "Touch prima del tempo");
+                    Log.d(TAG_LOG, SplashActivity.class.getName() + ": Touch prima del tempo");
 
                 return false;
             }
@@ -134,7 +134,7 @@ public class SplashActivity extends Activity {
     @Override
     protected void onStart() {
         super.onStart();
-
+        Log.d(TAG_LOG, SplashActivity.class.getName() + ": onStart");
         if (mStartTime == -1L)
             mStartTime = SystemClock.uptimeMillis();
 
@@ -142,13 +142,35 @@ public class SplashActivity extends Activity {
         goAheadMessage = mHandler.obtainMessage(GO_AHEAD_WHAT);
         mHandler.sendMessageAtTime(goAheadMessage, mStartTime+ MAX_WAIT_INTERVAL);
 
-        Log.d(TAG_LOG, "Handler message sent");
+        Log.d(TAG_LOG, SplashActivity.class.getName() + ": Handler message sent");
     }
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
+        Log.d(TAG_LOG, SplashActivity.class.getName() + ": onDestroy");
         mHandler.removeCallbacksAndMessages(null);
 
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        Log.d(TAG_LOG, SplashActivity.class.getName() + ": onResume");
+    }
+
+    @Override
+
+    protected void onPause() {
+        super.onPause();
+
+        Log.d(TAG_LOG, SplashActivity.class.getName() + ": onPause");
+
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        Log.d(TAG_LOG, SplashActivity.class.getName() + ": onStop");
     }
 }

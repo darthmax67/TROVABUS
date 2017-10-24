@@ -9,17 +9,24 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".MainActivity" />
+        <activity android:name=".BusStopActivity" />
         <activity
             android:name=".SplashActivity"
             android:label="@string/app_name"
-            android:theme="@style/FullScreen"
-            >
+            android:theme="@style/FullScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity android:name=".BusStopListActivity">
+            <intent-filter>
+                <action android:name="android.battistim.it.busfinder.action.PICK_BUS_STOP_ACTION"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+
     </application>
 
 </manifest>

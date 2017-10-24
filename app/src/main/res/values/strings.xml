@@ -3,4 +3,10 @@
     <string name="hello_world">hello_world</string>
     <string name="action_settings">settings</string>
     <string name="title_activity_splash">SplashActivity</string>
+    <string name="send_bus_stop_button">Invia dati fermata</string>
+    <string name="send_bus_stop_back_button">Indietro</string>
+    <string name="pick_bus_stop_button">Pick Bus Stop</string>
+    <string name="cancelled_operation">Cancelled result</string>
+    <string name="custom_operation">Custom result</string>
+
 </resources>

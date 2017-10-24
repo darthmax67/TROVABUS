@@ -11,7 +11,7 @@
     tools:context="android.battistim.it.busfinder.MainActivity">
 
     <TextView
-        android:text="CIAO AUTOBUS ACTIVITY MAIN"
+        android:text="BUSFINDER: ACTIVITY MAIN"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
@@ -21,5 +21,39 @@
         android:layout_marginStart="51dp"
         android:layout_marginTop="84dp"
         android:id="@+id/textView" />
+
+    <Button
+        android:id="@+id/send_bus_stop_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="41dp"
+        android:text="@string/send_bus_stop_button"
+        android:layout_below="@+id/textView"
+        android:layout_alignLeft="@+id/textView"
+        android:layout_alignStart="@+id/textView" />
+
+    <Button
+        android:id="@+id/select_bus_stop_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="pickBusStop"
+        android:text="@string/pick_bus_stop_button"
+        android:layout_marginTop="24dp"
+
+        android:layout_below="@+id/send_bus_stop_button"
+        android:layout_alignLeft="@+id/send_bus_stop_button"
+        android:layout_alignStart="@+id/send_bus_stop_button" />
+
+    <TextView
+        android:id="@+id/main_timer_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="26dp"
+        android:text="TextView"
+        android:textSize="30dp"
+        android:layout_below="@+id/select_bus_stop_button"
+        android:layout_alignLeft="@+id/select_bus_stop_button"
+        android:layout_alignStart="@+id/select_bus_stop_button" />
+
 
 </RelativeLayout>
